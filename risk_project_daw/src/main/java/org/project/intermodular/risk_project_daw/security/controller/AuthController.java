@@ -2,6 +2,16 @@ package org.project.intermodular.risk_project_daw.security.controller;
 
 
 
+import org.project.intermodular.risk_project_daw.security.dto.JwtDto;
+import org.project.intermodular.risk_project_daw.security.dto.LoginUsuario;
+import org.project.intermodular.risk_project_daw.security.dto.Mensaje;
+import org.project.intermodular.risk_project_daw.security.dto.NuevoUsuario;
+import org.project.intermodular.risk_project_daw.security.entity.RolDb;
+import org.project.intermodular.risk_project_daw.security.entity.UsuarioDb;
+import org.project.intermodular.risk_project_daw.security.entity.enums.RolNombre;
+import org.project.intermodular.risk_project_daw.security.jwt.JwtService;
+import org.project.intermodular.risk_project_daw.security.service.RolService;
+import org.project.intermodular.risk_project_daw.security.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +27,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import jakarta.validation.Valid;
 import java.util.HashSet;

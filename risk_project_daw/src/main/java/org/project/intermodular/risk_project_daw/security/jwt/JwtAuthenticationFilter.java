@@ -1,6 +1,7 @@
 package org.project.intermodular.risk_project_daw.security.jwt;
 
 
+import org.project.intermodular.risk_project_daw.security.service.UserDetailsServiceImpl;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import edu.alumno.hector.api_rest_mysql_futbol.security.service.UserDetailsServiceImpl;
 
 import org.springframework.stereotype.Component;
 

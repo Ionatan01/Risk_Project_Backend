@@ -1,12 +1,12 @@
-package edu.alumno.hector.api_rest_mysql_futbol.security.service;
+package org.project.intermodular.risk_project_daw.security.service;
 
 import java.util.Optional;
 
+import org.project.intermodular.risk_project_daw.security.entity.UsuarioDb;
+import org.project.intermodular.risk_project_daw.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.alumno.hector.api_rest_mysql_futbol.security.entity.UsuarioDb;
-import edu.alumno.hector.api_rest_mysql_futbol.security.repository.UsuarioRepository;
 import jakarta.validation.constraints.NotNull;
 
 @Service

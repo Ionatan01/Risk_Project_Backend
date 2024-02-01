@@ -5,6 +5,7 @@ package org.project.intermodular.risk_project_daw.security;
 import java.util.List;
 
 import org.project.intermodular.risk_project_daw.security.jwt.JwtAuthenticationFilter;
+import org.project.intermodular.risk_project_daw.security.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

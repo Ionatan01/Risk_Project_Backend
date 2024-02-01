@@ -1,14 +1,16 @@
-package edu.alumno.hector.api_rest_mysql_futbol.security.service;
+package org.project.intermodular.risk_project_daw.security.service;
+
+
 
 import java.util.Optional;
 
+import org.project.intermodular.risk_project_daw.security.entity.RolDb;
+import org.project.intermodular.risk_project_daw.security.entity.enums.RolNombre;
+import org.project.intermodular.risk_project_daw.security.repository.RolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import edu.alumno.hector.api_rest_mysql_futbol.security.entity.RolDb;
-import edu.alumno.hector.api_rest_mysql_futbol.security.entity.enums.RolNombre;
-import edu.alumno.hector.api_rest_mysql_futbol.security.repository.RolRepository;
 import jakarta.validation.constraints.NotNull;
 
 @Service
