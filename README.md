@@ -1,2 +1,2 @@
 ﻿# Risk_Project_Backend
-#const Grupo = 1;
+#int Grupo = 1;
