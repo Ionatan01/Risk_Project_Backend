@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RiskProjectDawApplication<risk_project_daw>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.project.intermodular.risk_project_daw.RiskProjectDawApplication",
+            "projectName": "risk_project_daw",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
