@@ -34,3 +34,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwia
 ###
 GET  http://localhost:8090/api/risk/salas HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3NzI5MjAyLCJleHAiOjE3MDc3NjUyMDJ9.YGMR6hZpAWLI09mKCOP2mdmAx1U5FaZ4K2mV4ja7cYQ
+
+##Muestra Zonas
+###
+GET  http://localhost:8090/api/risk/zonas HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3NzI5MjAyLCJleHAiOjE3MDc3NjUyMDJ9.YGMR6hZpAWLI09mKCOP2mdmAx1U5FaZ4K2mV4ja7cYQ
