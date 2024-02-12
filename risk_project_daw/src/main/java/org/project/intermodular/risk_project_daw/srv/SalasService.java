@@ -1,10 +1,10 @@
 package org.project.intermodular.risk_project_daw.srv;
 
 import org.project.intermodular.risk_project_daw.model.dto.PaginaDto;
-import org.project.intermodular.risk_project_daw.model.dto.PartidaList;
+import org.project.intermodular.risk_project_daw.model.dto.SalasList;
 import org.springframework.data.domain.Pageable;
 
-public interface PartidaService {
+public interface SalasService {
 
-    PaginaDto<PartidaList> findAllPage(Pageable pageable);
+    PaginaDto<SalasList> findAllPage(Pageable pageable);
 }

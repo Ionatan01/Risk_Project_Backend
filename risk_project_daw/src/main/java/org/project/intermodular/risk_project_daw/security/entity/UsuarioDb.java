@@ -42,7 +42,6 @@ public class UsuarioDb {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuarios_roles", joinColumns = @JoinColumn(name = "idUsuario"), inverseJoinColumns = @JoinColumn(name = "idRol"))
     private Set<RolDb> roles = new HashSet<>();
-
     public UsuarioDb(@NotNull String nombre, @NotNull String nickname, @NotNull String email, @NotNull String password) {
         this.nombre = nombre;
         this.nickname = nickname;

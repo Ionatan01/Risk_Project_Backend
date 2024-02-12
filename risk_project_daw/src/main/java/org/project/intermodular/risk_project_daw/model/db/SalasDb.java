@@ -1,7 +1,5 @@
 package org.project.intermodular.risk_project_daw.model.db;
 
-import java.sql.Date;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -13,9 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name= "jugadores")
-public class JugadoresDb {
+@Table(name= "salas")
+public class SalasDb {
     @Id
-    private Integer jugadoresid;
-    private String estado;
+    private Long  idsala;
+    private Integer jugador1;
+    private Integer jugador2;
+    private Integer jugador3;
+    private Integer jugador4;
 }
