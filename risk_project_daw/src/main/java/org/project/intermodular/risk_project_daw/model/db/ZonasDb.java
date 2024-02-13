@@ -17,7 +17,9 @@ import lombok.NoArgsConstructor;
 @Table(name= "zonas")
 public class ZonasDb {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_zona;
+    private Long jugador_duenyo;
     private String descripcion;
    
 }

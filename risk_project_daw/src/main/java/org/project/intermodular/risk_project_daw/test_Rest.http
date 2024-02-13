@@ -64,9 +64,35 @@ POST http://localhost:8090/api/risk/crearsala HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
 Content-Type: application/json
 
+
 {
-    "jugador1": 0,
-    "jugador2": 0,
+    "jugador1": 1,
+    "jugador2": 1,
     "jugador3": 0,
     "jugador4": 0
 }
+
+##Crear zonas vacias
+###
+POST http://localhost:8090/api/risk/crearzonas HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Content-Type: application/json
+
+[
+    {
+        "jugador_duenyo": 0,
+        "descripcion": "Europa"
+    },
+    {
+        "jugador_duenyo": 0,
+        "descripcion": "Africa"
+    },
+    {
+        "jugador_duenyo": 0,
+        "descripcion": "Asia"
+    },
+    {
+        "jugador_duenyo": 0,
+        "descripcion": "Oceania"
+    }
+]
