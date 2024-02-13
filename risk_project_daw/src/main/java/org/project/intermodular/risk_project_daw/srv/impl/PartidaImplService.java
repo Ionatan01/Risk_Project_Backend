@@ -1,6 +1,7 @@
 package org.project.intermodular.risk_project_daw.srv.impl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.project.intermodular.risk_project_daw.model.db.PartidaDb;
@@ -15,36 +16,34 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PartidaImplService implements PartidaService {
-    
+
     private final PartidaRepository partidaRepository;
 
     public PartidaImplService(PartidaRepository partidaRepository) {
         this.partidaRepository = partidaRepository;
     }
 
-   
-
     public PaginaDto<PartidaList> findAllPage(Pageable pageable) {
         Page<PartidaDb> paginaPartidaDb = partidaRepository.findAll(pageable);
-        List<PartidaList> partidaLists = PartidaMapper.INSTANCE.partidaDbListToPartidaList(paginaPartidaDb.getContent());
+        List<PartidaList> partidaLists = PartidaMapper.INSTANCE
+                .partidaDbListToPartidaList(paginaPartidaDb.getContent());
         return new PaginaDto<>(
-            paginaPartidaDb.getNumber(),
-            paginaPartidaDb.getSize(),
-            paginaPartidaDb.getTotalElements(),
-            paginaPartidaDb.getTotalPages(),
-            partidaLists,
-            paginaPartidaDb.getSort());
+                paginaPartidaDb.getNumber(),
+                paginaPartidaDb.getSize(),
+                paginaPartidaDb.getTotalElements(),
+                paginaPartidaDb.getTotalPages(),
+                partidaLists,
+                paginaPartidaDb.getSort());
     }
 
+    @Override
+    public Optional<PartidaDb> getPartidaById(Long id) {
+        return partidaRepository.findById(id);
+    }
 
-
-    
-
-
-
-  
-
-
-
+    @Override
+    public PartidaDb createPartida(PartidaDb partida) {
+        return partidaRepository.save(partida);
+    }
 
 }

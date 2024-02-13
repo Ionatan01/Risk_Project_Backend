@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 public class SalasEdit {
     
-    private Long idsala;
+    private Long id_sala;
     private Integer jugador1;
     private Integer jugador2;
     private Integer jugador3;

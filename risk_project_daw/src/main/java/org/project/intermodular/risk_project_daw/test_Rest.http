@@ -28,14 +28,45 @@ Content-Type: application/json
 ##Muestra Partidas
 ###
 GET  http://localhost:8090/api/risk/partidas HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3NzI5MjAyLCJleHAiOjE3MDc3NjUyMDJ9.YGMR6hZpAWLI09mKCOP2mdmAx1U5FaZ4K2mV4ja7cYQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
 
 ##Muestra Salas
 ###
 GET  http://localhost:8090/api/risk/salas HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3NzI5MjAyLCJleHAiOjE3MDc3NjUyMDJ9.YGMR6hZpAWLI09mKCOP2mdmAx1U5FaZ4K2mV4ja7cYQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
 
 ##Muestra Zonas
 ###
 GET  http://localhost:8090/api/risk/zonas HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3NzI5MjAyLCJleHAiOjE3MDc3NjUyMDJ9.YGMR6hZpAWLI09mKCOP2mdmAx1U5FaZ4K2mV4ja7cYQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+
+##Muestra Partidas por ID
+###
+GET http://localhost:8090/api/risk/partidas/2 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+
+##Muestra Partidas crear partida
+###
+
+POST http://localhost:8090/api/risk/crearpartida HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Content-Type: application/json
+
+{
+    "estado_partida": "Espera",
+    "num_jugadores": 0
+}
+
+
+##Crear salas vacias
+###
+POST http://localhost:8090/api/risk/crearsala HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Content-Type: application/json
+
+{
+    "jugador1": 0,
+    "jugador2": 0,
+    "jugador3": 0,
+    "jugador4": 0
+}
