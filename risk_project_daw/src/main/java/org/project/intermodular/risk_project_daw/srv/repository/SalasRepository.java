@@ -1,5 +1,7 @@
 package org.project.intermodular.risk_project_daw.srv.repository;
 
+import java.util.List;
+
 import org.project.intermodular.risk_project_daw.model.db.SalasDb;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
@@ -9,6 +11,8 @@ import org.springframework.stereotype.Repository;
 public interface SalasRepository extends JpaRepository<SalasDb, Long>{
 
     Page<SalasDb> findAll (Pageable pageable);
+
+    List<SalasDb> findByJugador4IsNotNull();
 
     
 }
