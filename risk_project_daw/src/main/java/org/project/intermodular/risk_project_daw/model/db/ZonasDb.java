@@ -21,5 +21,6 @@ public class ZonasDb {
     private Long id_zona;
     private Long jugador_duenyo;
     private String descripcion;
+    private Integer tropas;
    
 }

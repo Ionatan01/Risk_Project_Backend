@@ -6,11 +6,11 @@ POST  http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "pruebaProyeAdmin",
+    "nickname": "pruebaProyeAdmin3",
     "nombre":"prueba Proyecte",
-    "email":"hectorproyeAdmin@gmail.com",
-    "password":"NoTeLoDigo@1",
-    "roles":["ROLE_ADMIN"]
+    "email":"hectorproyeAdmin3@gmail.com",
+    "password":"NoTeLoDigo@1"
+   
 }
 
 ###
@@ -20,7 +20,7 @@ POST  http://localhost:8090/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "pruebaProyeAdmin",
+    "nickname": "pruebaProyeAdmin3",
     "password":"NoTeLoDigo@1"
     
 }
@@ -28,12 +28,12 @@ Content-Type: application/json
 ##Muestra Partidas
 ###
 GET  http://localhost:8090/api/risk/partidas HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3OTg0MTI2LCJleHAiOjE3MDgwMjAxMjZ9.AUEvLA3yVdNKwEiVcg4uOxmrndQKdeBsA38JaCOkGos
 
 ##Muestra Salas
 ###
 GET  http://localhost:8090/api/risk/salas HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluMyIsImlhdCI6MTcwNzk4NzAxNiwiZXhwIjoxNzA4MDIzMDE2fQ.2PeQ0m_u8Sqbqj6bYPl_-1YxCx1e3EjL0B33MLzf8cQ
 
 ##Muestra Zonas
 ###

@@ -52,30 +52,33 @@ public class SecurityConfig {
                         "/swagger-ui/**",
                         "/webjars/**" };
 
-        @Bean
-        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                http
-                                .csrf(csrf -> csrf
-                                                .disable())
-                                .authorizeHttpRequests(authRequest -> authRequest
-                                                .requestMatchers(WHITE_LIST_URL).permitAll()
-                                                .anyRequest().authenticated())
-                                .sessionManagement(sessionManager -> sessionManager
-                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-                return http.build();
-        }
-
-        @Bean
-        CorsConfigurationSource corsConfigurationSource() {
-                CorsConfiguration configuration = new CorsConfiguration();
-
-                configuration.setAllowedOrigins(List.of("http://localhost:4200"));
-                configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
-                configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
-                UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-                source.registerCorsConfiguration("/**", configuration);
-                return source;
-        }
+                        @Bean
+                        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+                                http
+                                                // Utiliza Customizer para configurar CORS
+                                                .cors(customizer -> customizer.configurationSource(corsConfigurationSource()))
+                                                .csrf(csrf -> csrf.disable())
+                                                .authorizeHttpRequests(authRequest -> authRequest
+                                                                .requestMatchers(WHITE_LIST_URL).permitAll()
+                                                                .anyRequest().authenticated())
+                                                .sessionManagement(sessionManager -> sessionManager
+                                                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                                                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                                return http.build();
+                        }
+                
+                        @Bean
+                        CorsConfigurationSource corsConfigurationSource() {
+                                CorsConfiguration configuration = new CorsConfiguration();
+                
+                                configuration.setAllowedOrigins(List.of("http://localhost:4200"));
+                                configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+                                configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+                                configuration.setAllowCredentials(true); // Si necesitas enviar cookies o autenticación HTTP
+                
+                                UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+                                source.registerCorsConfiguration("/**", configuration);
+                                return source;
+                        }
 
 }

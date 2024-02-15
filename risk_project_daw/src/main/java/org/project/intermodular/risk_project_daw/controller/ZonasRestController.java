@@ -4,15 +4,10 @@ import java.util.List;
 
 import org.project.intermodular.risk_project_daw.model.db.ZonasDb;
 import org.project.intermodular.risk_project_daw.model.dto.PaginaDto;
-import org.project.intermodular.risk_project_daw.model.dto.PartidaList;
-import org.project.intermodular.risk_project_daw.model.dto.SalasList;
 import org.project.intermodular.risk_project_daw.model.dto.ZonasList;
-import org.project.intermodular.risk_project_daw.srv.PartidaService;
-import org.project.intermodular.risk_project_daw.srv.SalasService;
 import org.project.intermodular.risk_project_daw.srv.ZonasService;
 import org.project.intermodular.risk_project_daw.srv.repository.ZonasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

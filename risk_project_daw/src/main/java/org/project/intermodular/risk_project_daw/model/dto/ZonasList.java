@@ -13,5 +13,5 @@ public class ZonasList {
     private Long id_zona;
     private Long jugador_duenyo;
     private String descripcion;
-   
+    private Integer tropas;
 }

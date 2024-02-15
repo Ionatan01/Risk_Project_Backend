@@ -71,8 +71,6 @@ public class AuthController {
                     nuevoUsuario.getEmail(),
                     passwordEncoder.encode(nuevoUsuario.getPassword()));
             Set<RolDb> rolesDb = new HashSet<>();
-            rolesDb.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
-            if (nuevoUsuario.getRoles().contains("admin"))
                 rolesDb.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
             usuarioDb.setRoles(rolesDb);
             usuarioService.save(usuarioDb);
@@ -92,6 +90,7 @@ public class AuthController {
         String jwt = jwtProvider.generateToken(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
+        System.out.println(ResponseEntity.status(HttpStatus.OK).body(jwtDto));
         return ResponseEntity.status(HttpStatus.OK).body(jwtDto);
     }
 }
