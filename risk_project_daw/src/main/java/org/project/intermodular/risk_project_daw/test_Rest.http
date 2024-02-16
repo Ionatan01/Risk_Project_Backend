@@ -61,13 +61,13 @@ Content-Type: application/json
 ##Crear salas vacias
 ###
 POST http://localhost:8090/api/risk/crearsala HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluIiwiaWF0IjoxNzA3ODEzNTc0LCJleHAiOjE3MDc4NDk1NzR9.1G55su8c4Rm8N1TrV15kdn6I9ArwEEPRNZvfHry2qXs
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluMyIsImlhdCI6MTcwODA3MTcwMywiZXhwIjoxNzA4MTA3NzAzfQ.K-EF8VOnaP0RIWZq33YVXYyiZh9l9_kihTW98u_yjhA
 Content-Type: application/json
 
 
 {
-    "jugador1": 1,
-    "jugador2": 1,
+    "jugador1": 0,
+    "jugador2": 0,
     "jugador3": 0,
     "jugador4": 0
 }
@@ -94,5 +94,16 @@ Content-Type: application/json
     {
         "jugador_duenyo": 0,
         "descripcion": "Oceania"
-    }
+    }    
 ]
+
+##
+###
+POST http://localhost:8090/api/risk/1/100 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwcnVlYmFQcm95ZUFkbWluMyIsImlhdCI6MTcwODA3MTcwMywiZXhwIjoxNzA4MTA3NzAzfQ.K-EF8VOnaP0RIWZq33YVXYyiZh9l9_kihTW98u_yjhA
+Content-Type: application/json
+
+
+    {
+        "tropas": 100
+    }
