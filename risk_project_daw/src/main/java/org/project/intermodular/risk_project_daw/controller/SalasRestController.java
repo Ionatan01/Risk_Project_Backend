@@ -39,6 +39,21 @@ public class SalasRestController {
     @PostMapping("/crearsala")
     public ResponseEntity<?> createSala(@RequestBody SalasDb sala) {
         try {
+            // Inicializar los valores de los jugadores con 0 si son null
+            if (sala.getJugador1() == null) {
+                sala.setJugador1(0L);
+            }
+            if (sala.getJugador2() == null) {
+                sala.setJugador2(0L);
+            }
+            if (sala.getJugador3() == null) {
+                sala.setJugador3(0L);
+            }
+            if (sala.getJugador4() == null) {
+                sala.setJugador4(0L);
+            }
+
+            // Guardar la sala en la base de datos
             SalasDb nuevaSala = salaRepository.save(sala);
             return new ResponseEntity<>(nuevaSala, HttpStatus.CREATED);
         } catch (Exception e) {
