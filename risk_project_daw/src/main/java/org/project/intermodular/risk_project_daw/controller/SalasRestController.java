@@ -53,6 +53,13 @@ public class SalasRestController {
                 sala.setJugador4(0L);
             }
 
+            Long jugadorId = sala.getJugador1(); // Obtener el ID del jugador desde el objeto SalasDb
+            
+            if (jugadorId == null) {
+                return new ResponseEntity<>("ID del jugador 1 no proporcionado", HttpStatus.BAD_REQUEST);
+            }
+            sala.setJugador1(jugadorId);
+
             // Guardar la sala en la base de datos
             SalasDb nuevaSala = salaRepository.save(sala);
             return new ResponseEntity<>(nuevaSala, HttpStatus.CREATED);
