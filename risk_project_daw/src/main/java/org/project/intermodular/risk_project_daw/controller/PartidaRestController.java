@@ -96,15 +96,15 @@ public ResponseEntity<?> createPartida() {
 @PostMapping("/crearpartida")
 public ResponseEntity<?> createPartida() {
     try {
-        // Obtener todas las salas llenas
+        // Obté totes les sales plenes
         List<SalasDb> salasLlenas = salaRepository.findByJugador4IsNotNull();
 
         if (!salasLlenas.isEmpty()) {
-            // Crear una nueva partida
+            // Crear una nova partida
             PartidaDb nuevaPartida = new PartidaDb();
             nuevaPartida.setEstado_partida("activa");
 
-            // Obtener los IDs de los jugadores en las salas llenas y agregarlos al campo num_jugadores
+            // Obtenén els IDs dels jugadors de les sales plenes i agregarlos al camp num_jugadores
             List<Long> jugadores = new ArrayList<>();
             for (SalasDb sala : salasLlenas) {
                 if (sala.getJugador1() != 0) jugadores.add(sala.getJugador1());
@@ -114,10 +114,10 @@ public ResponseEntity<?> createPartida() {
             }
             nuevaPartida.setNum_jugadores(jugadores.size());
 
-            // Guardar la nueva partida en la base de datos
+            // Guardar la nova partida en la base de datos
             PartidaDb partidaGuardada = partidaRepository.save(nuevaPartida);
 
-            // Asignar una zona a cada jugador con 25 tropas
+            // Asignar una zona a cada jugador y li asigna 25 tropes
             for (Long jugadorId : jugadores) {
                 ZonasDb nuevaZona = new ZonasDb();
                 nuevaZona.setJugador_duenyo(jugadorId);
@@ -126,7 +126,7 @@ public ResponseEntity<?> createPartida() {
                 zonasRepository.save(nuevaZona);
             }
 
-            // Eliminar las salas llenas ya que se ha creado la partida
+            // Eliminar les sales plenes y ja que s'ha creat la partida
             salaRepository.deleteAll(salasLlenas);
 
             return new ResponseEntity<>(partidaGuardada, HttpStatus.CREATED);

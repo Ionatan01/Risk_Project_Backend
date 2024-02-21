@@ -63,7 +63,7 @@ public class ZonasRestController {
             return new ResponseEntity<>("Una o ambas zonas no existen", HttpStatus.BAD_REQUEST);
         }
 
-        // Realizar la lógica de combate aquí
+        
         if (zonaAtacante.getTropas() > zonaDefensora.getTropas()) {
             // El ataque tiene éxito
             int tropasRestantesAtacante = zonaAtacante.getTropas() - zonaDefensora.getTropas();
